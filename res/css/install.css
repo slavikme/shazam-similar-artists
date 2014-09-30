@@ -1,0 +1,20 @@
+body {
+    font-family: 'Josefin Sans', Helvetica, Arial, Sans-Serif;
+}
+pre {
+    overflow: auto;
+}
+form {
+    margin: 0;
+}
+.main-wrapper {
+    max-width: 600px;
+    background-color: #fafafa;
+    box-shadow: 0 1px 10px 0px rgba(0,0,0,.5);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 9px;
+}
+.ui.dropdown {
+    font-family: 'Lucida Grande';
+}

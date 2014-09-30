@@ -1,0 +1,33 @@
+<div class="artist-row" data-id="{{_index}}">
+    <h2 class="artist-name"><a href="{{shazam.link}}" target="_blank">{{name}}</a></h2>
+    <div class="artist-details">
+        <div class="artist-detail-heading{{#if not _songs_folded}} opened{{/if}}"><a class="artist-songs-more" href="javascript:void(0)" target="_blank">Songs Tagged ({{shazam.songs.length}})</a></div>
+        <div class="artist-songs{{#if _songs_folded}} hidden{{/if}}">
+            <ul>
+                {{#shazam.songs}}
+                <li data-id="{{@index}}">
+                    <a href="{{shazam.link}}" target="_blank"><img src="{{image}}" /></a>
+                    <a href="{{shazam.link}}" target="_blank">{{name}}</a>
+                </li>
+                {{/shazam.songs}}
+            </ul>
+        </div>
+        <div class="artist-detail-heading{{#if not _similar_folded}} opened{{/if}}"><a class="artist-similar-more" href="javascript:void(0)" target="_blank">Similar Artists{{#if _similar_loaded}} ({{similar.length}}){{/if}}</a></div>
+        <div class="artist-similar{{#if _similar_folded}} hidden{{/if}}">
+            {{#if _similar_loaded}}
+            <ul>
+                {{#similar}}
+                <li class="{{@index}}">
+                    <a href="{{lastfm_link}}" target="_blank"><img src="{{image_url}}" /></a>
+                    <a href="{{lastfm_link}}" target="_blank">{{name}}</a>
+                </li>
+                {{/similar}}
+                {{^similar}}
+                <li>No similar artists found for this artist.</li>
+                {{/similar}}
+            </ul>
+            {{else}}
+            <img src="img/similar-loader.gif" /> Searching...</div>
+            {{/if}}
+    </div>
+</div>

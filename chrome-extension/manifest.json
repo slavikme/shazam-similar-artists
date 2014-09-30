@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+
+    "name": "Similar Artists",
+    "description": "This extension find a similar artists to those located in you Shazam account using last.fm API. It is a part of an interview test for Web-Pick's FED position.",
+    "version": "1.0",
+
+    "permissions": [
+        "http://ws.audioscrobbler.com/",
+        "http://www.shazam.com/",
+        "tabs"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    }
+}
