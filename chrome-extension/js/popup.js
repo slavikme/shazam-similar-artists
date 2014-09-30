@@ -1,5 +1,5 @@
 var ShazaSimilarArtists = {
-    simlarUrl: "http://local.ssal.slavik.meltser.info/findsimilar.php",
+    simlarUrl: "http://ssal.slavik.meltser.info/findsimilar.php",
     baseUrl: "http://www.shazam.com",
     artists: [],
     nextPath: "/fragment/myshazam",
