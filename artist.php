@@ -8,11 +8,15 @@ switch ( $_SERVER["REQUEST_METHOD"] ) {
     case "GET":
         if ( empty($_GET["id"]) || !is_numeric($_GET["id"]) ) {
             http_response_code(400);
-            die(json_encode(array("error"=>"A valid 'artist_id' must be provided")));
+            die(json_encode(array("error"=>"A valid 'id' must be provided")));
         }
         $id = $_GET["id"];
-        $similar = $db->getArtist($id);
-        die(json_encode($similar));
+        $artist = $db->getArtist($id);
+        if ( !$artist ) {
+            http_response_code(404);
+            die(json_encode(array("error"=>"Not found")));
+        }
+        die(json_encode($artist));
         break;
     
     default:

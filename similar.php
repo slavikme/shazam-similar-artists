@@ -16,6 +16,10 @@ switch ( $_SERVER["REQUEST_METHOD"] ) {
             http_response_code(400);
             die(json_encode(array("error"=>"A valid 'artist_id' or 'id' must be provided")));
         }
+        if ( !$similar ) {
+            http_response_code(404);
+            die(json_encode(array("error"=>"Not found")));
+        }
         die(json_encode($similar));
         break;
     
