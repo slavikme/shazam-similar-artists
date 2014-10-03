@@ -97,7 +97,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" ) {
     $db_username = $_POST["db"]["username"];
     $db_password = $_POST["db"]["password"];
     
-    $admin = json_decode(json_encode($_POST["admin"]), false);
+//    $admin = json_decode(json_encode($_POST["admin"]), false);
     
     $errors = [];
     $config_create_failed = false;
@@ -113,7 +113,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" ) {
             $config_create_failed = true;
         }
         $ins->createTables();
-        $_SESSION["install_success"] = $_SESSION["install_success"];
+        $_SESSION["install_success"] = $api_key;
         $success = true;
     } catch (Exception $e) {
         $errors[] = $e->getMessage();
